@@ -18,7 +18,7 @@ logging:
     ROOT: DEBUG
     tech.jhipster: DEBUG
     org.hibernate.SQL: DEBUG
-    com.mycompany.myapp: DEBUG
+    com.myapp: DEBUG
 
 spring:
   devtools:
@@ -32,7 +32,7 @@ spring:
       indent-output: true
   data:
     mongodb:
-      uri: mongodb://localhost:27017/jhipsterSampleApplication1
+      uri: mongodb://localhost:27017/myApp
   mail:
     host: localhost
     port: 25

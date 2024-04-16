@@ -13,7 +13,7 @@ jib {
         }
     }
     to {
-        image = "jhipstersampleapplication1:latest"
+        image = "myapp:latest"
     }
     container {
         entrypoint = ["bash", "-c", "/entrypoint.sh"]

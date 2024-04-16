@@ -2,9 +2,7 @@
   <div class="col-8">
     @if (authority()) {
       <div>
-        <h2 data-cy="authorityDetailsHeading">
-          <span jhiTranslate="jhipsterSampleApplication1App.adminAuthority.detail.title">Authority</span>
-        </h2>
+        <h2 data-cy="authorityDetailsHeading"><span jhiTranslate="myApp.adminAuthority.detail.title">Authority</span></h2>
 
         <hr />
 
@@ -13,7 +11,7 @@
         <jhi-alert></jhi-alert>
 
         <dl class="row-md jh-entity-details">
-          <dt><span jhiTranslate="jhipsterSampleApplication1App.adminAuthority.name">Name</span></dt>
+          <dt><span jhiTranslate="myApp.adminAuthority.name">Name</span></dt>
           <dd>
             <span>{{ authority()!.name }}</span>
           </dd>

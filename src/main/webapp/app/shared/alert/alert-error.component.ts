@@ -26,20 +26,14 @@ export class AlertErrorComponent implements OnDestroy {
   private translateService = inject(TranslateService);
 
   constructor() {
-    this.errorListener = this.eventManager.subscribe(
-      'jhipsterSampleApplication1App.error',
-      (response: EventWithContent<unknown> | string) => {
-        const errorResponse = (response as EventWithContent<AlertError>).content;
-        this.addErrorAlert(errorResponse.message, errorResponse.key, errorResponse.params);
-      },
-    );
+    this.errorListener = this.eventManager.subscribe('myApp.error', (response: EventWithContent<unknown> | string) => {
+      const errorResponse = (response as EventWithContent<AlertError>).content;
+      this.addErrorAlert(errorResponse.message, errorResponse.key, errorResponse.params);
+    });
 
-    this.httpErrorListener = this.eventManager.subscribe(
-      'jhipsterSampleApplication1App.httpError',
-      (response: EventWithContent<unknown> | string) => {
-        this.handleHttpError(response);
-      },
-    );
+    this.httpErrorListener = this.eventManager.subscribe('myApp.httpError', (response: EventWithContent<unknown> | string) => {
+      this.handleHttpError(response);
+    });
   }
 
   setClasses(alert: Alert): { [key: string]: boolean } {
@@ -132,9 +126,7 @@ export class AlertErrorComponent implements OnDestroy {
       }
       // convert 'something[14].other[4].id' to 'something[].other[].id' so translations can be written to it
       const convertedField: string = fieldError.field.replace(/\[\d*\]/g, '[]');
-      const fieldName: string = this.translateService.instant(
-        `jhipsterSampleApplication1App.${fieldError.objectName as string}.${convertedField}`,
-      );
+      const fieldName: string = this.translateService.instant(`myApp.${fieldError.objectName as string}.${convertedField}`);
       this.addErrorAlert(`Error on field "${fieldName}"`, `error.${fieldError.message as string}`, { fieldName });
     }
   }
