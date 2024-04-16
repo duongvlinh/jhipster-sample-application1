@@ -1,0 +1,31 @@
+
+application {
+  config {
+    baseName myApp
+    applicationType monolith
+    packageName com.myapp
+    authenticationType jwt
+    clientFramework angularX
+  }
+  entities *
+}
+
+entity Company {
+ id Long,
+ name String
+}
+
+entity Person {
+ id Long,
+ name String
+}
+
+relationship OneToMany {
+  Company to Person
+}
+
+filter *
+paginate * with pagination
+service all with serviceImpl
+dto * with mapstruct
+skipClient *
