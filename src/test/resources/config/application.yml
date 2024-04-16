@@ -15,7 +15,7 @@
 
 mongock:
   migration-scan-package:
-    - com.mycompany.myapp.config.dbmigrations
+    - com.myapp.config.dbmigrations
   mongo-db:
     read-concern: local
     write-concern:
@@ -24,7 +24,7 @@ mongock:
 
 spring:
   application:
-    name: jhipsterSampleApplication1
+    name: myApp
   jackson:
     serialization:
       write-durations-as-timestamps: false
@@ -36,13 +36,13 @@ spring:
     basename: i18n/messages
   task:
     execution:
-      thread-name-prefix: jhipster-sample-application-1-task-
+      thread-name-prefix: my-app-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: jhipster-sample-application-1-scheduling-
+      thread-name-prefix: my-app-scheduling-
       pool:
         size: 20
   thymeleaf:
@@ -59,9 +59,9 @@ server:
 # ===================================================================
 jhipster:
   clientApp:
-    name: 'jhipsterSampleApplication1App'
+    name: 'myApp'
   mail:
-    from: jhipsterSampleApplication1@localhost.com
+    from: myApp@localhost.com
     base-url: http://127.0.0.1:8080
   logging:
     # To test json console appender

@@ -11,7 +11,7 @@ plugins {
     // jhipster-needle-gradle-plugins - JHipster will add additional gradle plugins here
 }
 
-group = "com.mycompany.myapp"
+group = "com.myapp"
 version = "0.0.1-SNAPSHOT"
 
 description = ""
@@ -71,7 +71,7 @@ eclipse {
 defaultTasks "bootRun"
 
 springBoot {
-    mainClass = "com.mycompany.myapp.JhipsterSampleApplication1App"
+    mainClass = "com.myapp.MyApp"
 }
 
 test {
